@@ -1,0 +1,75 @@
+<script>
+    // break
+    // while, for 안에서 break가 선언되면 반복문이 종료된다.
+
+    const breakFunc = () => {
+        let count = 0;
+        while(count < 100) {
+            console.log(`${count} break Test`);
+            count = count + 1;
+        }
+
+        console.log(`break 빠져 나옴!`);
+    };
+
+    breakFunc();
+
+    // break의 범위는 while문 안에 있다. count < 100.
+
+
+    // continue
+    // while, for문에서 continue를 선언하면 다음 반복문으로 넘어간다.
+    // array, filter => 원래 있던 배열에서 필터링할 때, [1, 2, 3] 에서 []번 배열로 push할 때 조건이 홀수인 경우 필터링.
+    
+    const continueFunc = () => {
+        let count = 0;
+        while(count < 100) {
+            count = count + 1;
+            if (count == 98) {
+                continue;
+            }
+            console.log(`${count} continue Test`);
+        }
+
+        console.log(`continue 빠져 나옴!`);
+    };
+
+    continueFunc();
+
+
+
+    // return
+    // 함수 안에서 return이 선언 되면 함수가 종료된다.
+    // 계산이 완료되서 더 이상 함수 내의 코드를 실행할 필요가 없을 때
+    // 매개변수가 "" 같이 빈 String이면, 0을 return 한다.
+    // "가나다" 같이 빈 String이 아니면 ["가", "나", "다"] 로 만들어 보아라.
+
+    const strFunc = (str) => {
+        if(str.length == 0) {
+            return 0;
+        }
+
+        return str.split("");
+    };
+
+    console.log(strFunc(""));
+    console.log(strFunc("가나다"));
+
+    const returnFunc = () => {
+        let count = 0;
+        while(count < 100) {
+            console.log(`${count} return Test`);
+            if (count > 10) {
+                return;
+            }
+
+            count = count + 1;
+    
+        }
+
+        console.log(`return 빠져 나옴!`);
+    };
+
+    returnFunc();
+
+</script>
